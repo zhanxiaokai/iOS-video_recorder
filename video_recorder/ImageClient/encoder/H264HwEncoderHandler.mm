@@ -13,6 +13,8 @@
 
 #pragma mark - H264HwEncoderImplDelegate delegare
 
+
+
 - (void)gotSpsPps:(NSData*)sps pps:(NSData*)pps timestramp:(Float64)miliseconds fromEncoder:(H264HwEncoderImpl*)encoder
 {
     const char bytesHeader[] = "\x00\x00\x00\x01";

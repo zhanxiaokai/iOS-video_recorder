@@ -45,25 +45,11 @@
 		188E06971F15034100BF4345 /* recording_h264_publisher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188E06851F15034000BF4345 /* recording_h264_publisher.cpp */; };
 		188E06981F15034100BF4345 /* recording_publisher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188E06871F15034000BF4345 /* recording_publisher.cpp */; };
 		188E06C01F15037A00BF4345 /* AQPlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 188E069B1F15037A00BF4345 /* AQPlayer.mm */; };
-		188E06C11F15037A00BF4345 /* autotune.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188E069C1F15037A00BF4345 /* autotune.cpp */; };
 		188E06C21F15037A00BF4345 /* AVAudioSession+RouteUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 188E069F1F15037A00BF4345 /* AVAudioSession+RouteUtils.m */; };
-		188E06C31F15037A00BF4345 /* bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 188E06A01F15037A00BF4345 /* bgm.mp3 */; };
-		188E06C41F15037A00BF4345 /* doubleyou.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188E06A11F15037A00BF4345 /* doubleyou.cpp */; };
-		188E06C51F15037A00BF4345 /* dynamic_delay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188E06A31F15037A00BF4345 /* dynamic_delay.cpp */; };
-		188E06C61F15037A00BF4345 /* encrypted.melp in Resources */ = {isa = PBXBuildFile; fileRef = 188E06A51F15037A00BF4345 /* encrypted.melp */; };
-		188E06C71F15037A00BF4345 /* hsfeq.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188E06A71F15037A00BF4345 /* hsfeq.cpp */; };
 		188E06C81F15037A00BF4345 /* KTVAUGraphController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 188E06AA1F15037A00BF4345 /* KTVAUGraphController.mm */; };
 		188E06C91F15037A00BF4345 /* KTVAUGraphRecorder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 188E06AC1F15037A00BF4345 /* KTVAUGraphRecorder.mm */; };
-		188E06CA1F15037A00BF4345 /* mayer_fft.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188E06AD1F15037A00BF4345 /* mayer_fft.cpp */; };
-		188E06CB1F15037A00BF4345 /* mel_chord_ana.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188E06AF1F15037A00BF4345 /* mel_chord_ana.cpp */; };
-		188E06CC1F15037A00BF4345 /* micro_pitchshift.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188E06B21F15037A00BF4345 /* micro_pitchshift.cpp */; };
-		188E06CD1F15037A00BF4345 /* mote_c.melp in Resources */ = {isa = PBXBuildFile; fileRef = 188E06B41F15037A00BF4345 /* mote_c.melp */; };
-		188E06CE1F15037A00BF4345 /* pitch_bend.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188E06B51F15037A00BF4345 /* pitch_bend.cpp */; };
 		188E06CF1F15037A00BF4345 /* play_back_effect_param.plist in Resources */ = {isa = PBXBuildFile; fileRef = 188E06B71F15037A00BF4345 /* play_back_effect_param.plist */; };
 		188E06D01F15037A00BF4345 /* record_effect_param.plist in Resources */ = {isa = PBXBuildFile; fileRef = 188E06B81F15037A00BF4345 /* record_effect_param.plist */; };
-		188E06D11F15037A00BF4345 /* scale_analyze.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188E06B91F15037A00BF4345 /* scale_analyze.cpp */; };
-		188E06D21F15037A00BF4345 /* scale_count.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188E06BB1F15037A00BF4345 /* scale_count.cpp */; };
-		188E06D31F15037A00BF4345 /* test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 188E06BD1F15037A00BF4345 /* test.mp3 */; };
 		188E06D41F15037A00BF4345 /* UIDevice-Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 188E06BF1F15037A00BF4345 /* UIDevice-Hardware.m */; };
 		188E07281F1503A200BF4345 /* libffmpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 188E07271F1503A200BF4345 /* libffmpeg.a */; };
 		188E072B1F15048E00BF4345 /* libiconv.2.4.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 188E072A1F15048E00BF4345 /* libiconv.2.4.0.tbd */; };
@@ -174,40 +160,14 @@
 		188E06881F15034000BF4345 /* recording_publisher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = recording_publisher.h; sourceTree = "<group>"; };
 		188E069A1F15037A00BF4345 /* AQPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQPlayer.h; sourceTree = "<group>"; };
 		188E069B1F15037A00BF4345 /* AQPlayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AQPlayer.mm; sourceTree = "<group>"; };
-		188E069C1F15037A00BF4345 /* autotune.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = autotune.cpp; sourceTree = "<group>"; };
-		188E069D1F15037A00BF4345 /* autotune.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = autotune.h; sourceTree = "<group>"; };
 		188E069E1F15037A00BF4345 /* AVAudioSession+RouteUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AVAudioSession+RouteUtils.h"; sourceTree = "<group>"; };
 		188E069F1F15037A00BF4345 /* AVAudioSession+RouteUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AVAudioSession+RouteUtils.m"; sourceTree = "<group>"; };
-		188E06A01F15037A00BF4345 /* bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm.mp3; sourceTree = "<group>"; };
-		188E06A11F15037A00BF4345 /* doubleyou.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = doubleyou.cpp; sourceTree = "<group>"; };
-		188E06A21F15037A00BF4345 /* doubleyou.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = doubleyou.h; sourceTree = "<group>"; };
-		188E06A31F15037A00BF4345 /* dynamic_delay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dynamic_delay.cpp; sourceTree = "<group>"; };
-		188E06A41F15037A00BF4345 /* dynamic_delay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dynamic_delay.h; sourceTree = "<group>"; };
-		188E06A51F15037A00BF4345 /* encrypted.melp */ = {isa = PBXFileReference; lastKnownFileType = file; path = encrypted.melp; sourceTree = "<group>"; };
-		188E06A61F15037A00BF4345 /* fft_routine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fft_routine.h; sourceTree = "<group>"; };
-		188E06A71F15037A00BF4345 /* hsfeq.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hsfeq.cpp; sourceTree = "<group>"; };
-		188E06A81F15037A00BF4345 /* hsfeq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hsfeq.h; sourceTree = "<group>"; };
 		188E06A91F15037A00BF4345 /* KTVAUGraphController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVAUGraphController.h; sourceTree = "<group>"; };
 		188E06AA1F15037A00BF4345 /* KTVAUGraphController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = KTVAUGraphController.mm; sourceTree = "<group>"; };
 		188E06AB1F15037A00BF4345 /* KTVAUGraphRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVAUGraphRecorder.h; sourceTree = "<group>"; };
 		188E06AC1F15037A00BF4345 /* KTVAUGraphRecorder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = KTVAUGraphRecorder.mm; sourceTree = "<group>"; };
-		188E06AD1F15037A00BF4345 /* mayer_fft.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mayer_fft.cpp; sourceTree = "<group>"; };
-		188E06AE1F15037A00BF4345 /* mayer_fft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mayer_fft.h; sourceTree = "<group>"; };
-		188E06AF1F15037A00BF4345 /* mel_chord_ana.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mel_chord_ana.cpp; sourceTree = "<group>"; };
-		188E06B01F15037A00BF4345 /* mel_chord_ana.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mel_chord_ana.h; sourceTree = "<group>"; };
-		188E06B11F15037A00BF4345 /* mel_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mel_types.h; sourceTree = "<group>"; };
-		188E06B21F15037A00BF4345 /* micro_pitchshift.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = micro_pitchshift.cpp; sourceTree = "<group>"; };
-		188E06B31F15037A00BF4345 /* micro_pitchshift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = micro_pitchshift.h; sourceTree = "<group>"; };
-		188E06B41F15037A00BF4345 /* mote_c.melp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mote_c.melp; sourceTree = "<group>"; };
-		188E06B51F15037A00BF4345 /* pitch_bend.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pitch_bend.cpp; sourceTree = "<group>"; };
-		188E06B61F15037A00BF4345 /* pitch_bend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pitch_bend.h; sourceTree = "<group>"; };
 		188E06B71F15037A00BF4345 /* play_back_effect_param.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = play_back_effect_param.plist; sourceTree = "<group>"; };
 		188E06B81F15037A00BF4345 /* record_effect_param.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = record_effect_param.plist; sourceTree = "<group>"; };
-		188E06B91F15037A00BF4345 /* scale_analyze.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scale_analyze.cpp; sourceTree = "<group>"; };
-		188E06BA1F15037A00BF4345 /* scale_analyze.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scale_analyze.h; sourceTree = "<group>"; };
-		188E06BB1F15037A00BF4345 /* scale_count.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scale_count.cpp; sourceTree = "<group>"; };
-		188E06BC1F15037A00BF4345 /* scale_count.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scale_count.h; sourceTree = "<group>"; };
-		188E06BD1F15037A00BF4345 /* test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = test.mp3; sourceTree = "<group>"; };
 		188E06BE1F15037A00BF4345 /* UIDevice-Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice-Hardware.h"; sourceTree = "<group>"; };
 		188E06BF1F15037A00BF4345 /* UIDevice-Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice-Hardware.m"; sourceTree = "<group>"; };
 		188E06D81F1503A200BF4345 /* avcodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avcodec.h; sourceTree = "<group>"; };
@@ -567,40 +527,14 @@
 			children = (
 				188E069A1F15037A00BF4345 /* AQPlayer.h */,
 				188E069B1F15037A00BF4345 /* AQPlayer.mm */,
-				188E069C1F15037A00BF4345 /* autotune.cpp */,
-				188E069D1F15037A00BF4345 /* autotune.h */,
 				188E069E1F15037A00BF4345 /* AVAudioSession+RouteUtils.h */,
 				188E069F1F15037A00BF4345 /* AVAudioSession+RouteUtils.m */,
-				188E06A01F15037A00BF4345 /* bgm.mp3 */,
-				188E06A11F15037A00BF4345 /* doubleyou.cpp */,
-				188E06A21F15037A00BF4345 /* doubleyou.h */,
-				188E06A31F15037A00BF4345 /* dynamic_delay.cpp */,
-				188E06A41F15037A00BF4345 /* dynamic_delay.h */,
-				188E06A51F15037A00BF4345 /* encrypted.melp */,
-				188E06A61F15037A00BF4345 /* fft_routine.h */,
-				188E06A71F15037A00BF4345 /* hsfeq.cpp */,
-				188E06A81F15037A00BF4345 /* hsfeq.h */,
 				188E06A91F15037A00BF4345 /* KTVAUGraphController.h */,
 				188E06AA1F15037A00BF4345 /* KTVAUGraphController.mm */,
 				188E06AB1F15037A00BF4345 /* KTVAUGraphRecorder.h */,
 				188E06AC1F15037A00BF4345 /* KTVAUGraphRecorder.mm */,
-				188E06AD1F15037A00BF4345 /* mayer_fft.cpp */,
-				188E06AE1F15037A00BF4345 /* mayer_fft.h */,
-				188E06AF1F15037A00BF4345 /* mel_chord_ana.cpp */,
-				188E06B01F15037A00BF4345 /* mel_chord_ana.h */,
-				188E06B11F15037A00BF4345 /* mel_types.h */,
-				188E06B21F15037A00BF4345 /* micro_pitchshift.cpp */,
-				188E06B31F15037A00BF4345 /* micro_pitchshift.h */,
-				188E06B41F15037A00BF4345 /* mote_c.melp */,
-				188E06B51F15037A00BF4345 /* pitch_bend.cpp */,
-				188E06B61F15037A00BF4345 /* pitch_bend.h */,
 				188E06B71F15037A00BF4345 /* play_back_effect_param.plist */,
 				188E06B81F15037A00BF4345 /* record_effect_param.plist */,
-				188E06B91F15037A00BF4345 /* scale_analyze.cpp */,
-				188E06BA1F15037A00BF4345 /* scale_analyze.h */,
-				188E06BB1F15037A00BF4345 /* scale_count.cpp */,
-				188E06BC1F15037A00BF4345 /* scale_count.h */,
-				188E06BD1F15037A00BF4345 /* test.mp3 */,
 				188E06BE1F15037A00BF4345 /* UIDevice-Hardware.h */,
 				188E06BF1F15037A00BF4345 /* UIDevice-Hardware.m */,
 			);
@@ -871,6 +805,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -891,15 +826,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				188E06CD1F15037A00BF4345 /* mote_c.melp in Resources */,
-				188E06C61F15037A00BF4345 /* encrypted.melp in Resources */,
-				188E06D31F15037A00BF4345 /* test.mp3 in Resources */,
 				188E060A1F1500A200BF4345 /* LaunchScreen.storyboard in Resources */,
 				188E06CF1F15037A00BF4345 /* play_back_effect_param.plist in Resources */,
 				188E062E1F15010A00BF4345 /* ViewController.xib in Resources */,
 				188E06071F1500A200BF4345 /* Assets.xcassets in Resources */,
 				188E06D01F15037A00BF4345 /* record_effect_param.plist in Resources */,
-				188E06C31F15037A00BF4345 /* bgm.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -934,10 +865,8 @@
 				188E07391F1504B400BF4345 /* CADebugPrintf.cpp in Sources */,
 				188E06541F15028D00BF4345 /* ELPushStreamViewController.mm in Sources */,
 				188E065D1F15028D00BF4345 /* ELImageCameraRenderer.m in Sources */,
-				188E06C41F15037A00BF4345 /* doubleyou.cpp in Sources */,
 				18C930791F15C8A4004AE816 /* ELPushStreamMetadata.m in Sources */,
 				188E06561F15028D00BF4345 /* H264HwEncoderHandler.mm in Sources */,
-				188E06C11F15037A00BF4345 /* autotune.cpp in Sources */,
 				188E06901F15034000BF4345 /* live_packet_pool.cpp in Sources */,
 				188E06961F15034000BF4345 /* video_consumer_thread.cpp in Sources */,
 				188E06621F15028D00BF4345 /* CommonUtil.m in Sources */,
@@ -947,20 +876,15 @@
 				188E06971F15034100BF4345 /* recording_h264_publisher.cpp in Sources */,
 				188E06581F15028D00BF4345 /* ELImageContext.m in Sources */,
 				188E06611F15028D00BF4345 /* ELImageView.m in Sources */,
-				188E06CC1F15037A00BF4345 /* micro_pitchshift.cpp in Sources */,
 				188E065E1F15028D00BF4345 /* ELImageVideoCamera.m in Sources */,
-				188E06CB1F15037A00BF4345 /* mel_chord_ana.cpp in Sources */,
 				188E06921F15034000BF4345 /* live_video_packet_queue.cpp in Sources */,
 				188E06951F15034000BF4345 /* publisher_statistics.cpp in Sources */,
-				188E06D11F15037A00BF4345 /* scale_analyze.cpp in Sources */,
 				188E06981F15034100BF4345 /* recording_publisher.cpp in Sources */,
 				188E05FF1F1500A200BF4345 /* AppDelegate.m in Sources */,
 				188E06931F15034000BF4345 /* live_video_quality_agent.cpp in Sources */,
 				188E05FC1F1500A200BF4345 /* main.m in Sources */,
 				188E06C01F15037A00BF4345 /* AQPlayer.mm in Sources */,
 				188E06601F15028D00BF4345 /* ELImageVideoEncoder.m in Sources */,
-				188E06C51F15037A00BF4345 /* dynamic_delay.cpp in Sources */,
-				188E06CE1F15037A00BF4345 /* pitch_bend.cpp in Sources */,
 				188E073B1F1504B400BF4345 /* CAStreamBasicDescription.cpp in Sources */,
 				188E073C1F1504B400BF4345 /* CAXException.cpp in Sources */,
 				188E068E1F15034000BF4345 /* live_audio_packet_pool.cpp in Sources */,
@@ -969,14 +893,11 @@
 				188E068D1F15034000BF4345 /* gearshift_box.cpp in Sources */,
 				188E06C91F15037A00BF4345 /* KTVAUGraphRecorder.mm in Sources */,
 				188E06D41F15037A00BF4345 /* UIDevice-Hardware.m in Sources */,
-				188E06CA1F15037A00BF4345 /* mayer_fft.cpp in Sources */,
 				188E065B1F15028D00BF4345 /* ELImageProgram.m in Sources */,
 				188E065A1F15028D00BF4345 /* ELImageOutput.m in Sources */,
 				188E06911F15034000BF4345 /* live_thread.cpp in Sources */,
 				188E06551F15028D00BF4345 /* ELImageVideoScheduler.m in Sources */,
-				188E06D21F15037A00BF4345 /* scale_count.cpp in Sources */,
 				18C9307A1F15C8A4004AE816 /* ELVideoRecordingStudio.mm in Sources */,
-				188E06C71F15037A00BF4345 /* hsfeq.cpp in Sources */,
 				188E06591F15028D00BF4345 /* ELImageDirectPassRenderer.m in Sources */,
 				188E068C1F15034000BF4345 /* audio_encoder_adapter.cpp in Sources */,
 			);

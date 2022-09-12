@@ -913,22 +913,12 @@ static const int kMaximumHeadInputNode = 3;
 
 + (double)hardwareSampleRate
 {
-#warning 需要依赖
-//    if ([CommonTools GetIntSettingsByKey:SETTING_KEY_HIGHSAMPLINGMODE defaultInt:0] == 0)
-//        return 22050;
-    return 44100;
+    return 48000;
 }
 
 + (double)liveRoomHardwareSampleRate
 {
-#warning 需要依赖
-    NSString* modelIdentifier = [[UIDevice currentDevice] modelIdentifier];
-    if (([modelIdentifier rangeOfString:@"iPhone"].location != NSNotFound) && ([modelIdentifier compare:@"iPhone8,0"] == NSOrderedDescending)) {
-        return 48000;
-    }
-//    if ([CommonTools GetIntSettingsByKey:SETTING_KEY_HIGHSAMPLINGMODE defaultInt:0] == 0)
-//        return 22050;
-    return 44100;
+    return 48000;
 }
 
 + (AudioUnitParameterValue)calAutoFadeVolumeOfFrame:(UInt32)currentFrame

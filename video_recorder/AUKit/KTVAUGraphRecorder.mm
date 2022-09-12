@@ -12,9 +12,6 @@
 #import <mach/mach_time.h>
 #import "AVAudioSession+RouteUtils.h"
 #import "AQPlayer.h"
-#import "autotune.h"
-#import "doubleyou.h"
-#import "dynamic_delay.h"
 
 static OSStatus	ioUnitCallBack (void                        *inRefCon,
                                 AudioUnitRenderActionFlags 	*ioActionFlags,
@@ -143,10 +140,6 @@ static void propListener_routechange(void *                  inClientData,
     
     AQPlayer *_aqplayer;
     
-    AutoTune *_autoTune;
-    
-    DoubleYou *_doubleYou;
-    
     KTVEffectMode _effectMode;
     
     BOOL _isGraphAddedEffectNodes;
@@ -174,10 +167,6 @@ static void propListener_routechange(void *                  inClientData,
         [self configureAudioSession];
         [self configureAUGraph];
         [self configureRecorderGraph];
-        [self initAutoTune];
-        [self initDoubleYou];
-        [self initHarmonic];
-        [self initDynamicDelays];
         [self prepareForRecord];
     }
     
@@ -204,7 +193,6 @@ static void propListener_routechange(void *                  inClientData,
         char buf[256];
         fprintf(stderr, "Error: %s (%s)\n", e.mOperation, e.FormatError(buf));
     }
-    [self clearAllDspTool];
     _IONode = 0;
     _C32fTo16iNode = 0;
     _C16iTo32fNode = 0;
@@ -767,13 +755,6 @@ static void propListener_routechange(void *                  inClientData,
         if (_aqplayer) {
             _aqplayer->SetPitch(_pitchLevel);
         }
-        // 和声需要做pitch shift
-        //        if (_harmonic) {
-        //            _harmonic->PitchShift((int)_pitchLevel);
-        //        }
-        if (_autoTune) {
-            _autoTune->PitchShift((int)_pitchLevel);
-        }
     }
 }
 
@@ -819,115 +800,7 @@ static void propListener_routechange(void *                  inClientData,
 - (void)changeToDSPModeWithReverb:(BOOL)withReverb
 {
     [self clearAllEffectNodes];
-    [self adjustForCurrentDSPMode];
     [self addNodesForDSPWithReverb:withReverb];
-}
-
-- (void)initDynamicDelays
-{
-//    if (!_humanVoiceDelay) {
-//        _humanVoiceDelay = new DynamicDelay([KTVAUGraphController hardwareSampleRate], 300000, 2);
-//        [self resetHumanDanymicDelay:0.0f];
-//    }
-//    if (!_musicVoiceDelay) {
-//        _musicVoiceDelay = new DynamicDelay([KTVAUGraphController hardwareSampleRate], 300000, 2);
-//        [self resetMusicDanymicDelay:0.0f];
-//    }
-}
-
-- (void)initAutoTune
-{
-    if (!_autoTune) {
-        _autoTune = new AutoTune();
-//        if (_songMelPathString) {
-//            _autoTune->Init([KTVAUGraphController hardwareSampleRate], 2, [_songMelPathString UTF8String]);
-//            _autoTune->PitchShift((int)self.pitchLevel);
-//        } else {
-        _autoTune->Init([KTVAUGraphController hardwareSampleRate], 2, "");
-        _autoTune->PitchShift((int)self.pitchLevel);
-//        }
-    }
-}
-
-- (void)initDoubleYou
-{
-    if (!_doubleYou) {
-        _doubleYou = new DoubleYou();
-        _doubleYou->Init([KTVAUGraphController hardwareSampleRate], 2);
-    }
-}
-
-- (void)initHarmonic
-{
-//    if (!_harmonic) {
-//        if (_songMelPathString) {
-//            _harmonic = new HarmonicMix();
-//            BOOL isFastMode = ![[UIDevice currentDevice] isIphone5Upper];
-//            _harmonic->Init([KTVAUGraphController hardwareSampleRate], 2, [_songMelPathString UTF8String], self.isHarmonicOnlyChorus, isFastMode);
-//            // 4和4s为了效率，使用fast 模式
-//            _harmonic->PitchShift((int)self.pitchLevel);
-//        }
-//    }
-}
-
-- (void)clearAllDspTool
-{
-    [self clearAutoTune];
-    [self clearDoubleYou];
-    [self clearHarmonic];
-    [self clearDynamicDelays];
-}
-
-- (void)clearDynamicDelays
-{
-//    if (_humanVoiceDelay) {
-//        delete _humanVoiceDelay;
-//        _humanVoiceDelay = NULL;
-//    }
-//    if (_musicVoiceDelay) {
-//        delete _musicVoiceDelay;
-//        _musicVoiceDelay = NULL;
-//    }
-}
-
-- (void)clearAutoTune
-{
-    if (_autoTune) {
-        delete _autoTune;
-        _autoTune = NULL;
-    }
-}
-
-- (void)clearDoubleYou
-{
-    if (_doubleYou) {
-        delete _doubleYou;
-        _doubleYou = NULL;
-    }
-}
-
-- (void)clearHarmonic
-{
-//    if (_harmonic) {
-//        delete _harmonic;
-//        _harmonic = NULL;
-//    }
-}
-
-- (void)adjustForCurrentDSPMode
-{
-    if (_effectMode.category == KTVEffectCategoryAutoTone) {
-        [self initAutoTune];
-        _autoTune->SeekFromStart(playedFrames);
-    } else if (_effectMode.category == KTVEffectCategoryDoubleYou) {
-        [self initDoubleYou];
-        _doubleYou->ResetShiftDeposit();
-    }
-//    else if (_effectMode.category == KTVEffectCategoryHarmonic) {
-//        [self initHarmonic];
-//        _harmonic->SeekFromStart(_playedFrames);
-//        _harmonic->SetOnlyChorus(_isHarmonicOnlyChorus);
-//    }
 }
 
 - (void)addNodesForPitch
@@ -993,33 +866,7 @@ static void propListener_routechange(void *                  inClientData,
             default:
                 break;
         }
-    } else {
-        if (getEffectModesGraph(_effectMode) == KTVEffectGraphDSPReverb) {
-            [self adjustForCurrentDSPMode];
-        }
     }
-    
-    //    NSLog(@"self.dynamicDelayFromRecorder is %@", @(self.dynamicDelayFromRecorder));
-//    if (fabs(self.dynamicDelayFromRecorder) > 0.04f) {
-//        self.dynamicDelayFromRecorder = 0.0f;
-//    }
-//    switch (_effectMode.category) {
-//        case KTVEffectCategoryRobot:
-//            [self resetHumanDanymicDelay:0.0925f + self.dynamicDelayFromRecorder / 2.f];
-//            break;
-//        case KTVEffectCategoryAutoTone:
-//            [self resetHumanDanymicDelay:0.052f + self.dynamicDelayFromRecorder / 2.f];
-//            break;
-//        case KTVEffectCategoryDoubleYou:
-//            [self resetHumanDanymicDelay:0.0175f + self.dynamicDelayFromRecorder / 2.f];
-//            break;
-//        case KTVEffectCategoryHarmonic:
-//            [self resetHumanDanymicDelay:0.052f + self.dynamicDelayFromRecorder / 2.f];
-//            break;
-//        default:
-//            [self resetHumanDanymicDelay:-0.0075f + self.dynamicDelayFromRecorder / 2.f];
-//            break;
-//    }
     
     [self graphApplyEffectMode:_effectMode];
     [self updateAUGraph];
@@ -1028,73 +875,7 @@ static void propListener_routechange(void *                  inClientData,
 
 - (void)runDSP:(AudioBufferList *)ioData
 {
-    if (_effectMode.category == KTVEffectCategoryAutoTone) {
-        if (_autoTune) {
-            for (int i = 0; i < ioData->mNumberBuffers; i++) {
-                UInt32 bufSize = ioData->mBuffers[i].mDataByteSize;
-                SInt16 *outBuf = new SInt16[bufSize/sizeof(SInt16)];
-                _autoTune->runAutoTune((SInt16*)(ioData->mBuffers[i].mData), outBuf, bufSize / sizeof(SInt16));
-//                if (_humanVoiceDelay) {
-//                    SInt16 *delayedBuf = new SInt16[bufSize/sizeof(SInt16)];
-//                    _humanVoiceDelay->Delay(outBuf, delayedBuf, bufSize / sizeof(SInt16));
-//                    memcpy((SInt16*)(ioData->mBuffers[i].mData), delayedBuf, bufSize);
-//                    delete [] delayedBuf;
-//                    delete [] outBuf;
-//                } else {
-                    memcpy((SInt16*)(ioData->mBuffers[i].mData), outBuf, bufSize);
-                    delete[] outBuf;
-//                }
-            }
-        }
-    } else if (_effectMode.category == KTVEffectCategoryDoubleYou) {
-        if (_doubleYou) {
-            for (int i = 0; i < ioData->mNumberBuffers; i++) {
-                UInt32 bufSize = ioData->mBuffers[i].mDataByteSize;
-                SInt16 *outBuf = new SInt16[bufSize/sizeof(SInt16)];
-                _doubleYou->DYFlow((SInt16*)(ioData->mBuffers[i].mData), outBuf, bufSize / sizeof(SInt16));
-//                if (_humanVoiceDelay) {
-//                    SInt16 *delayedBuf = new SInt16[bufSize/sizeof(SInt16)];
-//                    _humanVoiceDelay->Delay(outBuf, delayedBuf, bufSize / sizeof(SInt16));
-//                    memcpy((SInt16*)(ioData->mBuffers[i].mData), delayedBuf, bufSize);
-//                    delete [] delayedBuf;
-//                    delete [] outBuf;
-//                } else {
-                    memcpy((SInt16*)(ioData->mBuffers[i].mData), outBuf, bufSize);
-                    delete[] outBuf;
-//                }
-            }
-        }
-    }
-//    else if (_effectMode.category == KTVEffectCategoryHarmonic) {
-//        if (_harmonic) {
-//            for (int i = 0; i < ioData->mNumberBuffers; i++) {
-//                UInt32 bufSize = ioData->mBuffers[i].mDataByteSize;
-//                SInt16 *outBuf = new SInt16[bufSize/sizeof(SInt16)];
-//                _harmonic->runHarmonicMix((SInt16*)(ioData->mBuffers[i].mData), outBuf, bufSize / sizeof(SInt16));
-//                if (_humanVoiceDelay) {
-//                    SInt16 *delayedBuf = new SInt16[bufSize/sizeof(SInt16)];
-//                    _humanVoiceDelay->Delay(outBuf, delayedBuf, bufSize / sizeof(SInt16));
-//                    memcpy((SInt16*)(ioData->mBuffers[i].mData), delayedBuf, bufSize);
-//                    delete [] delayedBuf;
-//                    delete [] outBuf;
-//                } else {
-//                    memcpy((SInt16*)(ioData->mBuffers[i].mData), outBuf, bufSize);
-//                    delete[] outBuf;
-//                }
-//            }
-//        }
-//    }
-//    else {
-//        if (_humanVoiceDelay) {
-//            for (int i = 0; i < ioData->mNumberBuffers; i++) {
-//                UInt32 bufSize = ioData->mBuffers[i].mDataByteSize;
-//                SInt16 *outBuf = new SInt16[bufSize/sizeof(SInt16)];
-//                _humanVoiceDelay->Delay((SInt16*)(ioData->mBuffers[i].mData), outBuf, bufSize / sizeof(SInt16));
-//                memcpy((SInt16*)(ioData->mBuffers[i].mData), outBuf, bufSize);
-//                delete[] outBuf;
-//            }
-//        }
-//    }
+    //TODO:
 }
 
 - (AUNode)findNodeForKey:(NSString*)paramKey
